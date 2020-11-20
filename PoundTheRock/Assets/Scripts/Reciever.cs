@@ -31,7 +31,7 @@ public class Reciever : MonoBehaviour
         {
            // col.gameObject.GetComponent<Rigidbody>().isKinematic = true;
             col.gameObject.GetComponent<ParabolaController>().StopFollow();
-           // GetComponent<Rigidbody>().isKinematic = false;
+            //col.gameObject.GetComponent<Rigidbody>().isKinematic = true;
             //GetComponent<Rigidbody>().useGravity = true;
             col.gameObject.GetComponent<Transform>().SetParent(transform);
             transform.tag = "carrier";
@@ -51,20 +51,23 @@ public class Reciever : MonoBehaviour
         {
             if (iscarrier == false)
             {
-                if (hasroute == false)
+                if (hasroute == false && GetComponent<NavMeshAgent>().enabled)
                 {
                     GetComponent<NavMeshAgent>().destination = endzone.position;
                 }
                 else
                 {
-                    GetComponent<NavMeshAgent>().destination = route[i];
-                    if (Vector3.Distance(transform.position, route[i]) < 1 && i < route.Count - 1)
+                    if (GetComponent<NavMeshAgent>().enabled)
                     {
-                        i++;
-                    }
-                    if (i >= route.Count)
-                    {
-                        GetComponent<NavMeshAgent>().destination = endzone.position;
+                        GetComponent<NavMeshAgent>().destination = route[i];
+                        if (Vector3.Distance(transform.position, route[i]) < 1 && i < route.Count - 1)
+                        {
+                            i++;
+                        }
+                        if (i >= route.Count)
+                        {
+                            GetComponent<NavMeshAgent>().destination = endzone.position;
+                        }
                     }
                 }
                 //GetComponent<NavMeshAgent>().destination = endzone.position;

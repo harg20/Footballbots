@@ -34,7 +34,7 @@ public class TackleBallCarrier : MonoBehaviour
             if (unstun >= 2f)
             {
                 GetComponent<Rigidbody>().isKinematic = true;
-                Debug.Log("free");
+
                 GetComponent<Rigidbody>().isKinematic = false;
                 unstun = 0;
             }

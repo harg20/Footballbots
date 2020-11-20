@@ -16,11 +16,13 @@ public class ball : MonoBehaviour
         {
             GetComponent<ParabolaController>().StopFollow();
             GetComponent<Collider>().isTrigger = false;
-            GetComponent<Rigidbody>().isKinematic = false;
+            
          
             if(other.gameObject.tag != "blackhole")
             {
                 GetComponent<Rigidbody>().useGravity = true;
+                GetComponent<Rigidbody>().isKinematic = false;
+                transform.parent = null;
             }
         }
     }

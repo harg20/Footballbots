@@ -63,20 +63,21 @@ public class Blocker : MonoBehaviour
             float j = 10;
             float bd = gameObject.GetComponent<NavMeshAgent>().remainingDistance;
             foreach (GameObject defender in defenders)
-           {
-                
-                float d = defender.GetComponent<NavMeshAgent>().remainingDistance;
-                
-
-                if (d < j && bd < 5f)
+            {
+                if (defender.GetComponent<NavMeshAgent>())
                 {
-                    
-                    j = d;
-                    
-                    GetComponent<NavMeshAgent>().SetDestination(defender.transform.position);
-                    newtarg = true;
-                }
+                    float d = defender.GetComponent<NavMeshAgent>().remainingDistance;
 
+
+                    if (d < j && bd < 5f)
+                    {
+
+                        j = d;
+
+                        GetComponent<NavMeshAgent>().SetDestination(defender.transform.position);
+                        newtarg = true;
+                    }
+                }
            }
         }
         else

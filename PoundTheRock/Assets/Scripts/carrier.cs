@@ -38,8 +38,11 @@ public class carrier : MonoBehaviour
             {
             if (boost == true)
             {
-                col.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-                col.gameObject.GetComponent<Rigidbody>().AddExplosionForce(500,transform.position,1);
+                if (col.gameObject.GetComponent<Rigidbody>())
+                {
+                    col.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                    col.gameObject.GetComponent<Rigidbody>().AddExplosionForce(500, transform.position, 1);
+                }
                 stamina -= 25;
                 //truck = false;
                 

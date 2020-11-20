@@ -128,6 +128,10 @@ public class GameManager : MonoBehaviour
             {
                 defender.GetComponent<TackleBallCarrier>().enabled = true;
             }
+            if (defender.GetComponentInChildren<gravgrab>())
+            {
+                defender.GetComponentInChildren<gravgrab>().enabled = true;
+            }
         }
         aiactive = true;
 
