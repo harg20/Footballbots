@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class AddObjToList : MonoBehaviour
 {
     public GameObject itemtemplate;
+    public GameObject winitemtemplate;
     public GameObject content;
+    public GameObject wincontent;
     public GameObject[] bots;
     
     
@@ -23,6 +25,13 @@ public class AddObjToList : MonoBehaviour
             copy.transform.parent = content.transform;
             copy.transform.GetChild(0).GetComponent<Text>().text = bot.name;
             copy.transform.GetChild(1).GetComponent<Text>().text = bot.GetComponent<BotStats>().cost.ToString();
+
+            var copywin = Instantiate(winitemtemplate);
+            copywin.transform.parent = wincontent.transform;
+            copywin.transform.GetChild(0).GetComponent<Text>().text = bot.name;
+            copywin.transform.GetChild(1).GetComponent<Text>().text = bot.GetComponent<BotStats>().cost.ToString();
+            copywin.transform.GetChild(2).GetComponent<Text>().text = bot.GetComponent<BotStats>().Upgrades[0].ToString();
+            
         }
     }
 

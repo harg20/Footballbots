@@ -523,6 +523,8 @@ MonoBehaviour:
   speed: 2
   strength: 2
   cost: 100
+  Upgrades:
+  - Speed
 --- !u!1 &5491577594711723087
 GameObject:
   m_ObjectHideFlags: 0

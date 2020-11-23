@@ -46,6 +46,19 @@ public class GameManager : MonoBehaviour
         canplace = true;
        
     }
+    public void UpgradeClick(string name, string upg)
+    {
+        Debug.Log(name + " " + reciever.name + " " + botblocker.name);
+        if (name == reciever.name)
+        {
+            reciever.GetComponent<BotStats>().Upgrade(upg);
+        }
+
+        if (name == botblocker.name)
+        {
+            botblocker.GetComponent<BotStats>().Upgrade(upg);
+        }
+    }
     public void UIClick(GameObject name)
     {
         string nam = name.GetComponentInChildren<Text>().text;

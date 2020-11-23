@@ -711,7 +711,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   strength: 2
-  cost: 120
+  cost: 110
+  Upgrades:
+  - Speed
 --- !u!54 &4368208024096417208
 Rigidbody:
   m_ObjectHideFlags: 0
