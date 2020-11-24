@@ -15,6 +15,8 @@ public class carrier : MonoBehaviour
     float deadtimer = 0;
     public float speed;
     public int rotspeed;
+    public GameObject Ball;
+    
     bool canjump = true;
     bool truck = false;
     bool notrolling = true;
@@ -27,7 +29,8 @@ public class carrier : MonoBehaviour
         deadtimer = 0;
         boostr = (speed * 2);
         stamUI = GameObject.FindGameObjectWithTag("feet");
-
+       
+       
 
     }
     private void OnCollisionEnter(Collision col)
@@ -52,7 +55,18 @@ public class carrier : MonoBehaviour
 
 
                 tagged = true;
+             
+                gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                gameObject.GetComponent<Rigidbody>().useGravity= true;
 
+
+                if (Ball.transform.parent == gameObject.transform)
+                {
+                  
+                    Ball.GetComponent<Rigidbody>().isKinematic = false;
+                    Ball.GetComponent<Rigidbody>().useGravity = true;
+                    Ball.transform.parent = null;
+                }
                 //Time.timeScale = 0;
 
             }
@@ -70,6 +84,7 @@ public class carrier : MonoBehaviour
         { 
         stamUI.GetComponent<RectTransform>().sizeDelta = new Vector2(stamina * 2, 50);
         }
+        
 
     }
 

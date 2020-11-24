@@ -16,12 +16,15 @@ public class GameManager : MonoBehaviour
     public GameObject Blocker;
     public GameObject botblocker;
     public GameObject Throwball;
+    public GameObject LossScreen;
     public GameObject Blockerpicked;
     public GameObject Blockerbruiser;
     public GameObject reciever;
+    public GameObject Carrier;
     public GameObject[] defenders;
     public List<GameObject> blockers;
     public List<GameObject> targblockers;
+    
 
     public int BudgetUI;
     int unitcost;
@@ -35,6 +38,7 @@ public class GameManager : MonoBehaviour
     bool canplace = true;
     public bool drawroute = false;
     bool aiactive = false;
+    bool tagged;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +48,8 @@ public class GameManager : MonoBehaviour
         //UIclicked = false;
         routespots = new List<Vector3>();
         canplace = true;
-       
+        LossScreen.SetActive(false);
+        Carrier = GameObject.FindGameObjectWithTag("carrier");
     }
     public void UpgradeClick(string name, string upg)
     {
@@ -152,6 +157,16 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        if (Carrier)
+        { 
+        tagged = Carrier.GetComponent<carrier>().tagged;
+
+            if (tagged)
+            {
+            LossScreen.SetActive(true);
+            }
+
+        }
         if (GameObject.Find("Budgettext"))
         {
             BudgetUI = GameObject.Find("Budgettext").GetComponent<BudgetCalculator>().budget;

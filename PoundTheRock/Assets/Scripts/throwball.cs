@@ -10,6 +10,7 @@ public class throwball : MonoBehaviour
     public Transform bolastart;
     public Transform bolamid;
     public Transform bolaend;
+    public GameManager gmgr;
     
     int rec = 0;
     protected float anim;
@@ -26,7 +27,7 @@ public class throwball : MonoBehaviour
         {
             ball = transform.GetChild(0).gameObject;
         }
-
+        
         foreach (GameObject reciever in GameObject.FindGameObjectsWithTag("rec"))
         {
             recievers.Add(reciever);
@@ -72,6 +73,7 @@ public class throwball : MonoBehaviour
                 Camera.main.GetComponent<CameraFollow>().target = ball.transform;
                 transform.parent.GetComponent<carrier>().enabled = false;
                 transform.parent.tag = "Player";
+                gmgr.Carrier = null;
                 transform.DetachChildren();
                 thrown = true;
                 
@@ -87,7 +89,7 @@ public class throwball : MonoBehaviour
                 Camera.main.GetComponent<CameraFollow>().target = ball.transform;
                 transform.parent.GetComponent<carrier>().enabled = false;
                 transform.parent.tag = "Player";
-               
+                gmgr.Carrier = null;
                 transform.DetachChildren();
                 thrown = true;
 
@@ -103,7 +105,7 @@ public class throwball : MonoBehaviour
                 Camera.main.GetComponent<CameraFollow>().target = ball.transform;
                 transform.parent.GetComponent<carrier>().enabled = false;
                 transform.parent.tag = "Player";
-
+                gmgr.Carrier = null;
                 transform.DetachChildren();
                 thrown = true;
 
@@ -119,7 +121,7 @@ public class throwball : MonoBehaviour
                 Camera.main.GetComponent<CameraFollow>().target = ball.transform;
                 transform.parent.GetComponent<carrier>().enabled = false;
                 transform.parent.tag = "Player";
-
+                gmgr.Carrier = null;
                 transform.DetachChildren();
                 thrown = true;
 

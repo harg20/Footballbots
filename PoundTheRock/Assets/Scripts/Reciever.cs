@@ -35,6 +35,7 @@ public class Reciever : MonoBehaviour
             //GetComponent<Rigidbody>().useGravity = true;
             col.gameObject.GetComponent<Transform>().SetParent(transform);
             transform.tag = "carrier";
+            Gmgr.GetComponent<GameManager>().Carrier = gameObject;
             GetComponent<NavMeshAgent>().enabled = false;
             GetComponent<carrier>().enabled = true;
             GetComponent<carrier>().tagged = false;

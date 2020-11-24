@@ -34,9 +34,9 @@ public class Blocker : MonoBehaviour
     private void OnCollisionEnter(Collision col)
     {
       
-        if (col.gameObject.tag == "Dfense" && hasstunned == false)
+        if (col.gameObject.tag == "Dfense" && hasstunned == false && col.gameObject.GetComponent<Rigidbody>())
         {
-            Debug.Log("boing");
+           
             Rigidbody colbod = col.gameObject.GetComponent<Rigidbody>();
             float colmass = colbod.mass;
             colbod.isKinematic = false;

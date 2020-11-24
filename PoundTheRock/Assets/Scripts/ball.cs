@@ -12,7 +12,7 @@ public class ball : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.tag != "rec" && other.gameObject.tag != "carrier")
+        if ( other.gameObject.tag != "rec" && other.gameObject.tag != "carrier")
         {
             GetComponent<ParabolaController>().StopFollow();
             GetComponent<Collider>().isTrigger = false;
@@ -23,6 +23,7 @@ public class ball : MonoBehaviour
                 GetComponent<Rigidbody>().useGravity = true;
                 GetComponent<Rigidbody>().isKinematic = false;
                 transform.parent = null;
+                Debug.Log(other.gameObject);
             }
         }
     }

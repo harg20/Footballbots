@@ -697,6 +697,7 @@ MonoBehaviour:
   stamUI: {fileID: 0}
   speed: 0.055
   rotspeed: 2
+  Ball: {fileID: 6397068804064545999, guid: ca875f30440972f4ca2c055fdf83faaa, type: 3}
 --- !u!114 &6183675564414998666
 MonoBehaviour:
   m_ObjectHideFlags: 0
