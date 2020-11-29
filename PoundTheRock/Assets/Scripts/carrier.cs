@@ -57,7 +57,7 @@ public class carrier : MonoBehaviour
                 tagged = true;
              
                 gameObject.GetComponent<Rigidbody>().isKinematic = false;
-                gameObject.GetComponent<Rigidbody>().useGravity= true;
+                //gameObject.GetComponent<Rigidbody>().useGravity= true;
 
 
                 if (Ball.transform.parent == gameObject.transform)

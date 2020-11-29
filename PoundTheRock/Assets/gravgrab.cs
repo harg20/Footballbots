@@ -51,7 +51,7 @@ public class gravgrab : MonoBehaviour
     {
         if (Planet)
         {
-            Debug.Log("gravitate " + Planet);
+           
             Planet.GetComponent<Rigidbody>().AddForce(calculateForce(), ForceMode.Impulse);
         }
     }
@@ -90,11 +90,11 @@ public class gravgrab : MonoBehaviour
         float distance = Vector3.Distance(transform.position, Planet.transform.position);
 
         float G = 6.67f * Mathf.Pow(10, -11);
-
+      
         float force = G* sunmass * planetmass / (distance * distance);
         if (Planet.tag != "ball")
         {
-
+            Debug.Log("gravitate " + Planet.tag);
             Vector3 fwd = (force * (new Vector3(transform.position.x, 0, transform.position.z) - new Vector3(Planet.transform.position.x, 0, Planet.transform.position.z)));
             return (fwd);
         }

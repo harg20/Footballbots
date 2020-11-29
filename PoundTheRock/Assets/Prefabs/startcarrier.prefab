@@ -48,6 +48,7 @@ MonoBehaviour:
   bolastart: {fileID: 0}
   bolamid: {fileID: 0}
   bolaend: {fileID: 0}
+  gmgr: {fileID: 0}
 --- !u!1 &5806475129930952065
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,8 +163,6 @@ MonoBehaviour:
   speed: 0.055
   rotspeed: 2
   Ball: {fileID: 6397068804064545999, guid: ca875f30440972f4ca2c055fdf83faaa, type: 3}
-  lossscreen: {fileID: 4031614982613578284, guid: 5fcc060e8f2d7e1489b02992f28a2157,
-    type: 3}
 --- !u!54 &6954359750307713193
 Rigidbody:
   m_ObjectHideFlags: 0
